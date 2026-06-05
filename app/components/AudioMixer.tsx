@@ -40,7 +40,7 @@ export default function AudioMixer() {
       />
       {needsPermission && <PermissionDialog onDismiss={dismissPermission} />}
 
-      <div className="flex flex-1 min-h-screen p-4 gap-[36px]">
+      <div className="flex flex-1 min-h-screen p-4 pt-2 gap-[36px]">
 
         {/* Left sidebar */}
         <SidebarAnimation isActive={isPlaying} />
@@ -48,7 +48,7 @@ export default function AudioMixer() {
         {/* Button section */}
         <div className="flex flex-col flex-1 my-[28px] gap-6 justify-center" style={{ gap: GAP }}>
           {/* Header */}
-          <div className="flex-10 grid grid-cols-5 gap-x-5 gap-y-6">
+          <div className="flex-10 grid grid-cols-5 gap-x-5 gap-y-6 items-center">
             <div className="flex items-center">
               <img src="/logo.png" alt="Campus League" className="h-14 object-contain" />
             </div>
@@ -128,6 +128,10 @@ export default function AudioMixer() {
 
         {/* Right sidebar */}
         <SidebarAnimation isActive={isPlaying} />
+      </div>
+
+      <div className="absolute bottom-3 left-0 right-0 text-center text-white text-sm pointer-events-none">
+        Campus League &copy; 2026
       </div>
     </div>
   );

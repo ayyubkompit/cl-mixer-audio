@@ -18,7 +18,6 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
     : { background: "#C7C7C7" };
 
   const textColor = isActive ? "#00FFFF" : "#4B4B4B";
-  const textGlow = isActive ? "0px 0px 30px #00FFFF, 0px 0px 60px #00FFFF" : "none";
   const shadow = isActive
     ? "0px 0px 4px 0px #00000099"
     : "0px 10px 4px 0px #00000099";
@@ -49,7 +48,7 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
       {isDownloading && (
         <span
           className="block rounded-full animate-pulse absolute"
-          style={{ width: 6, height: 6, background: "#4B4B4B66", right: 48, top: "50%", marginTop: -3 }}
+          style={{ width: 10, height: 10, background: "#4B4B4B66", right: 48, top: "50%", marginTop: -3 }}
         />
       )}
 
@@ -87,9 +86,9 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
           </span>
         }
         <span
-          className="relative font-bold truncate text-center block shrink-0"
+          className="relative font-bold truncate text-right block shrink-0"
           style={{
-            width: 44,
+            width: 28,
             color: textColor,
             fontSize,
           }}

@@ -47,8 +47,8 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
     >
       {isDownloading && (
         <span
-          className="block rounded-full animate-pulse absolute"
-          style={{ width: 10, height: 10, background: "#4B4B4B66", right: 48, top: "50%", marginTop: -3 }}
+          className="block rounded-full animate-pulse absolute bg-blue-400"
+          style={{ width: 10, height: 10, right: 48, top: "50%", marginTop: -3 }}
         />
       )}
 

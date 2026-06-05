@@ -7,7 +7,7 @@ import SoundButton from "./SoundButton";
 import SidebarAnimation from "./SidebarAnimation";
 import PermissionDialog from "./PermissionDialog";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SOUND_BASE_URL ?? "/";
+const BASE_URL = process.env.NEXT_PUBLIC_SOUND_BASE_URL ?? "/sounds/";
 const GAP = 24;
 
 export default function AudioMixer() {

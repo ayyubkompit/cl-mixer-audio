@@ -8,10 +8,9 @@ interface Props {
   isActive: boolean;
   downloadState: DownloadState;
   onClick: () => void;
-  compact?: boolean;
 }
 
-export default function SoundButton({ label, shortcutKey, isActive, downloadState, onClick, compact }: Props) {
+export default function SoundButton({ label, shortcutKey, isActive, downloadState, onClick }: Props) {
   const isDownloading = downloadState === "downloading" || downloadState === "idle";
 
   const bgStyle = isActive
@@ -24,8 +23,8 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
     ? "0px 0px 4px 0px #00000099"
     : "0px 10px 4px 0px #00000099";
 
-  // Font scales with viewport height; compact row is slightly smaller
-  const fontSize = 24;
+  // Scales with viewport width, capped at 24px
+  const fontSize = "clamp(12px, 1.5vw, 24px)";
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.currentTarget.blur();
@@ -39,8 +38,7 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
       className="relative flex items-center w-full select-none transition-all rounded-[20px] p-4"
       style={{
         ...bgStyle,
-        // Fill the parent grid cell (flex-1 rows); compact buttons size by content + padding
-        height: compact ? undefined : "100%",
+        height: 64,
         boxShadow: shadow,
         fontFamily: "var(--font-bai-jamjuree)",
         cursor: downloadState === "error" ? "not-allowed" : "pointer",

@@ -46,9 +46,9 @@ export default function AudioMixer() {
         <SidebarAnimation isActive={isPlaying} />
 
         {/* Button section */}
-        <div className="flex flex-col flex-1 my-[28px] gap-6" style={{ gap: GAP }}>
+        <div className="flex flex-col flex-1 my-[28px] gap-6 justify-center" style={{ gap: GAP }}>
           {/* Header */}
-          <div className="flex-20 grid grid-cols-5 gap-x-5 gap-y-6">
+          <div className="flex-10 grid grid-cols-5 gap-x-5 gap-y-6">
             <div className="flex items-center">
               <img src="/logo.png" alt="Campus League" className="h-14 object-contain" />
             </div>
@@ -61,7 +61,6 @@ export default function AudioMixer() {
                 isActive={activeKey === s.key}
                 downloadState={soundStates[s.key]?.download ?? "idle"}
                 onClick={() => play(s.key)}
-                compact
               />
             ))}
           </div>
@@ -121,7 +120,6 @@ export default function AudioMixer() {
                   isActive={activeKey === s.key}
                   downloadState={soundStates[s.key]?.download ?? "idle"}
                   onClick={() => play(s.key)}
-                  compact
                 />
               ))}
             </div>

@@ -33,6 +33,7 @@ export default function SoundButton({ label, shortcutKey, isActive, downloadStat
   return (
     <button
       onClick={handleClick}
+      onFocus={(e) => e.currentTarget.blur()}
       disabled={downloadState === "error"}
       className="relative flex items-center w-full select-none transition-all rounded-[20px] p-4"
       style={{
